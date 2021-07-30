@@ -51,73 +51,7 @@ public class Main {
                 char ch = str.charAt(i);
                 if(i%2==0){
                     decompressedString += ch;
-                }else{import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
-
-public class Main {
-
-    public static void main(String[] args) throws Exception {
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String strToCompress = br.readLine();
-            String strToDecompress = br.readLine();
-            
-            String cstr = compress(strToCompress);
-            System.out.println(cstr);
-            
-            String dcstr = decompress(strToDecompress);
-            System.out.println(dcstr);            
-    }
-    
-    public static String compress(String str){
-        
-        String compressedString = "";
-        
-        char ch = str.charAt(0);
-        int len = 1;
-        
-        for(int i =1 ; i<str.length(); i++){
-            char currCharacter = str.charAt(i);
-            
-            if(currCharacter == ch){
-                len++;
-            }else {
-                    compressedString = compressedString + ch + len + "";
-                    ch = currCharacter;
-                    len = 1;
-            }
-        }
-        
-        compressedString = compressedString + ch + len + "";
-        
-        return compressedString;
-    }
-    
-    public static String decompress(String str){
-        
-            String decompressedString = "";
-            
-            for(int i =0 ; i<str.length(); i++){
-                char ch = str.charAt(i);
-                if(i%2==0){
-                    decompressedString += ch;
                 }else{
-                    int val = Character.getNumericValue(ch);
-                    char prevCh = str.charAt(i-1);
-                    while(val > 1){
-                        decompressedString += prevCh + "";
-                        val--;  
-                    }
-                }
-            }
-            
-            return decompressedString;
-    }
-    
-}
                     int val = Character.getNumericValue(ch);
                     char prevCh = str.charAt(i-1);
                     while(val > 1){
